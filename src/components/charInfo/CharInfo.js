@@ -34,6 +34,7 @@ class CharInfo extends Component{
             .getCharacter(charId)
             .then(this.onCharLoaded)
             .catch(this.onError)
+           
     }
 
     onCharLoaded = (char) => {
@@ -41,6 +42,7 @@ class CharInfo extends Component{
         this.setState({
             char, 
             loading: false})
+        
     }
 
     onCharLoading = () => {
