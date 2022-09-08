@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useState } from "react";
 import AppHeader from "../appHeader/AppHeader";
 import RandomChar from "../randomChar/RandomChar";
 import CharList from "../charList/CharList";
@@ -6,46 +6,37 @@ import CharInfo from "../charInfo/CharInfo";
 import ErrorBoundaries from "../errorBoundaries/ErrorBoundaries";
 import decoration from '../../resources/img/vision.png';
 
-class App extends Component{
+const App = () =>{
     
-    state = {
-        selectedChar: null
-    }
+    const [selectedChar, setChar] = useState(null);
 
-    onCharSelected = (id) => {
-        this.setState({
-            selectedChar: id
-        }) 
+    const onCharSelected = (id) => {
+        setChar(id);
     }    
-
-
+           
+    return (
+        <div className="app">
+            <AppHeader/>
+            <main>
+                    <ErrorBoundaries>
+                            <RandomChar/>
+                    </ErrorBoundaries>
+            
+                <div className="char__content">
+                        <ErrorBoundaries>
+                            <CharList onCharSelected = {onCharSelected}/>
+                    </ErrorBoundaries>
+                    
+                    <ErrorBoundaries>
+                        <CharInfo charId={selectedChar}/>
+                    </ErrorBoundaries>
+                    
+                </div>
+                <img className="bg-decoration" src={decoration} alt="vision"/>
+            </main>
+        </div>
+    )
     
-
-    render(){
-        
-        return (
-            <div className="app">
-                <AppHeader/>
-                <main>
-                        <ErrorBoundaries>
-                              <RandomChar/>
-                        </ErrorBoundaries>
-              
-                    <div className="char__content">
-                         <ErrorBoundaries>
-                              <CharList onCharSelected = {this.onCharSelected}/>
-                        </ErrorBoundaries>
-                       
-                        <ErrorBoundaries>
-                            <CharInfo charId={this.state.selectedChar}/>
-                        </ErrorBoundaries>
-                       
-                    </div>
-                    <img className="bg-decoration" src={decoration} alt="vision"/>
-                </main>
-            </div>
-        )
-    }
 }
 
 export default App;
