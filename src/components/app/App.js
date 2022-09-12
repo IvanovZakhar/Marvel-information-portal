@@ -5,6 +5,7 @@ import CharList from "../charList/CharList";
 import CharInfo from "../charInfo/CharInfo";
 import ErrorBoundaries from "../errorBoundaries/ErrorBoundaries";
 import decoration from '../../resources/img/vision.png';
+import ComicsList from "../comicsList/ComicsList";
 
 const App = () =>{
     
@@ -18,12 +19,12 @@ const App = () =>{
         <div className="app">
             <AppHeader/>
             <main>
-                    <ErrorBoundaries>
+                    {/* <ErrorBoundaries>
                             <RandomChar/>
                     </ErrorBoundaries>
             
                 <div className="char__content">
-                        <ErrorBoundaries>
+                    <ErrorBoundaries>
                             <CharList onCharSelected = {onCharSelected}/>
                     </ErrorBoundaries>
                     
@@ -32,7 +33,8 @@ const App = () =>{
                     </ErrorBoundaries>
                     
                 </div>
-                <img className="bg-decoration" src={decoration} alt="vision"/>
+                <img className="bg-decoration" src={decoration} alt="vision"/> */}
+                <ComicsList/>
             </main>
         </div>
     )
