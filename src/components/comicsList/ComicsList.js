@@ -32,7 +32,7 @@ const ComicsList = () => {
 
     function renderItems(arr){
         const items = arr.map((item, i) => {
-            console.log(item.img)
+         
             let imgStyle = {'objectFit' : 'cover'};
             if (item.thumbnail === 'none') {
                 imgStyle = {'objectFit' : 'unset'};
