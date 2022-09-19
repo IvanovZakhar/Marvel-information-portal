@@ -1,9 +1,11 @@
 import './comicsList.scss';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
 import img from '../../resources/img/yana.jpg'
+
 
 const ComicsList = () => {
     const [comicsList, setComicsList] = useState([]);
@@ -39,14 +41,14 @@ const ComicsList = () => {
             }
             return (
                     <li key={i} className="comics__item">
-                        <a href="#">
+                        <Link to={`/comics/${item.id}`}>
                             <img style={imgStyle} 
                                  src={item.img === 'none' ? img : item.img} 
                                  alt={item.title} 
                                  className="comics__item-img"/>
                             <div className="comics__item-name">{item.title}</div>
                             <div className="comics__item-price">{item.price ? `${item.price}$` : 'Not on sale'}</div>
-                        </a>
+                        </Link>
                     </li>
                     )
         })
