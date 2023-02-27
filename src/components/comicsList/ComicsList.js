@@ -50,7 +50,7 @@ const ComicsList = () => {
                             <div className="comics__item-price">{item.price ? `${item.price}$` : 'Not on sale'}</div>
                         </Link>
                     </li>
-                    )
+            )
         })
 
         return (
