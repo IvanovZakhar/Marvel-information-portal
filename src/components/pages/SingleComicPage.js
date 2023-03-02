@@ -11,6 +11,7 @@ import AppBanner from '../appBanner/AppBanner';
 const SingleComicPage = () => {
 
     const {comicId} = useParams();
+    const {character} = useParams();
     const [comic, setComic] = useState(null);
     const {error, loading, getComic, clearError} = useMarvelService();
     
@@ -18,6 +19,9 @@ const SingleComicPage = () => {
         updateComic();
     }, [comicId])
     
+    useEffect(() => {
+        console.log(character)
+    }, [character])
 
 
     const updateComic = () => {

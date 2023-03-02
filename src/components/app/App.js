@@ -1,6 +1,7 @@
 import {lazy, Suspense} from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import AppHeader from "../appHeader/AppHeader";
+import SearchHeroForm from '../searchHeroForm/search-hero-form';
 import Spinner from '../spinner/Spinner';
 
 const Page404 = lazy(() => import('../pages/404'));
@@ -23,9 +24,11 @@ const App = () =>{
                             <Route path="/comics" element={ <ComicsPage/>}/>
                             <Route path="*" element={<Page404/>}/>
                             <Route path="/comics/:comicId" element={<SingleComicPage/>}/>
+                            <Route path="/characters/:character" element={<SingleComicPage/>}/>
                         </Routes>
                     </Suspense>
                 </main>
+                <SearchHeroForm/>
             </div>
         </Router>
     )
