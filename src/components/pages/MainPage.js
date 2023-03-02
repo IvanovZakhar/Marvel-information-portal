@@ -4,7 +4,7 @@ import CharList from "../charList/CharList";
 import CharInfo from "../charInfo/CharInfo";
 import ErrorBoundaries from "../errorBoundaries/ErrorBoundaries";
 import decoration from '../../resources/img/vision.png';
-
+import SearchHeroForm from '../searchHeroForm/search-hero-form';
 
 const MainPage = () => {
 
@@ -31,6 +31,7 @@ const MainPage = () => {
             
         </div>
         <img className="bg-decoration" src={decoration} alt="vision"/>
+        <SearchHeroForm/>
     </>
     )
 }

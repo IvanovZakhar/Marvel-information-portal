@@ -13,20 +13,27 @@ const SingleComicPage = () => {
     const {comicId} = useParams();
     const {character} = useParams();
     const [comic, setComic] = useState(null);
-    const {error, loading, getComic, clearError} = useMarvelService();
+    const {error, loading, getComic, clearError, getCharacterByName} = useMarvelService();
     
     useEffect(() => {
         updateComic();
+         
     }, [comicId])
     
     useEffect(() => {
-        console.log(character)
+        updateChar()
     }, [character])
 
 
     const updateComic = () => {
         clearError();
         getComic(comicId)
+            .then(onComicLoaded)
+    }
+
+    const updateChar = () => {
+        clearError();
+        getCharacterByName(character)
             .then(onComicLoaded)
     }
 

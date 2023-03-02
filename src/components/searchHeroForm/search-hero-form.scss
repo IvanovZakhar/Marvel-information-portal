@@ -43,7 +43,24 @@
         text-align: center; 
         color: #FFFFFF;
     }
-    div{
+    a{
+        position: absolute;
+        width: 101px;
+        height: 38px;       
+        right: 25px;
+        bottom: 25px;
+        background-image: url('..//../resources/img/page-button.png');
+        padding: 0;
+        border: none;
+        font-family: 'Roboto Condensed';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center; 
+        color: #FFFFFF;
+    }
+    .error{
         width: 375px;
         height: 24px;
         margin: 25px 0 0 25px;
@@ -54,9 +71,10 @@
         line-height: 21px;
         color: #9F0013;
     }
-    a{
-        width: 212px;
+    .found{
+        width: 375px;
         height: 24px;
+        margin: 25px 0 0 25px;
         font-family: 'Roboto Condensed';
         font-style: normal;
         font-weight: 700;
@@ -64,4 +82,5 @@
         line-height: 21px;
         color: #03710E;
     }
+ 
 }

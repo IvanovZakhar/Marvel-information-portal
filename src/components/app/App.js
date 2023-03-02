@@ -1,7 +1,7 @@
 import {lazy, Suspense} from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import AppHeader from "../appHeader/AppHeader";
-import SearchHeroForm from '../searchHeroForm/search-hero-form';
+
 import Spinner from '../spinner/Spinner';
 
 const Page404 = lazy(() => import('../pages/404'));
@@ -10,9 +10,7 @@ const ComicsPage = lazy(() => import('../pages/ComicsPage'));
 const SingleComicPage = lazy(() => import('../pages/SingleComicPage'));
 
 const App = () =>{
-    
-
-           
+               
     return (
         <Router>
             <div className="app">
@@ -28,7 +26,6 @@ const App = () =>{
                         </Routes>
                     </Suspense>
                 </main>
-                <SearchHeroForm/>
             </div>
         </Router>
     )
